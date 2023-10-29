@@ -1,0 +1,9 @@
+	xref	FileOpen
+	xref	FileReset
+	xref	FileClose
+	xref	FileCharRead
+	xref	Exit
+	xref	KbdCharRead
+	xref	ScrnCharWrite
+
+Start:	nop
