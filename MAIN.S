@@ -1,50 +1,46 @@
-;Name:		Mohammed Arab
-;Email:		marab065@mtroyal.ca
-;course:	comp2655
-;Assignment:	4
-;Due date:	Nov 21,22
-;Instructor:	Paul
-;File:		main.s
-;purpose:	bowling game for up to nine players
-;Details:
-;	game data is read from file.
-;	after reading names of the players next lines will have 2 digits from 0-A
-;	down1 and then down2 seperated by a single space.
+; Name:		Mohammed Arab
+; Email:	marab065@mtroyal.ca
+; File:		main.s
+; purpose:	bowling game for up to nine players
+; Details:
+;	game data is read from the file.
+;	after reading the names of the players next lines will have 2 digits from 0-A
+;	down1 and then down2 separated by a single space.
 ;	down1 and down2 will be the hits of the 10-pin and will keep changing
-;	score untill frame 9 after frame 9 players will be eliglible for 
-;	an extra shot if they get spare or strike in the 10th frame.
+;	score until frame 9 after frame 9 players will be eligible for 
+;	an extra shot if they get a spare or strike in the 10th frame.
 ;	if a player hits all 10 pins then his score in the next frame 
-;	will gain him bonus of the score depends if he ends up not 
+;	will gain him a bonus of the score depending if he ends up not 
 ;	hitting any pin then the bonus is gone else if at least one 
-;	pin is being hit then the bonus will add up to the score. 
+;	the pin is being hit then the bonus will add up to the score. 
 ;	input:	number of players, name of players, and knocked down pins.
 ;	output:	names of players, and scores after 10 frames.
 ;	limitations:	no error handling, expecting correct data from the file
-;status:	program is working
+;status:	the program is working
 ;-------------test cases--------------
-;tests
-;1)test's when a player hits strikes every frame his score should be 300
-;2)if a player doesn't hit any pin for the 10 frames then score stays 0
+; tests
+;1) test when a player hits strikes every frame his score should be 300
+;2)if a player doesn't hit any pin for the 10 frames then the score stays 0
 ;3)hitting spare after a strike.
 ;4)hitting strike after a spare
 ;
-;Register table:
+; Register table:
 ;	d0:	
-;		-input/output stores the ascii value of digit
+;		-input/output stores the ASCII value of a digit
 ;		-used to store down2 for the first 9 frames
 ;		-stores extra ball for the last frame
 ;		-num_players to initialize players
 ;	d1:	
 ;		-stores down1+down2 for the last frame
 ;		-stores weight_ball1 & weight_ball3
-;		-stores first digit of the score
+;		-stores the first digit of the score
 ;	d2:
 ;		-used as an offset 
 ;	d3:	
 ;		-counter for the first 9 frames
 ;		-holds weight_ball1&2 for the last frame
 ;		-used to test conditional branching for the last frame
-;		-stores second digit of the score
+;		-stores the second digit of the score
 ;	d4:	
 ;		-holds num_players
 ;	d5:
@@ -53,7 +49,7 @@
 ;	d6:
 ;		-stores down1
 ;		-stores score
-;		-stores third digit of the score 
+;		-stores the third digit of the score 
 ;	d7:
 ;		-address increment when loading name
 ;		-stores weight_ball2
